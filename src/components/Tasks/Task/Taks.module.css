@@ -1,0 +1,29 @@
+.container {
+    margin-top: 15px;
+    height: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.img {
+    width: 25px;
+}
+
+.input {
+    width: 75%;
+    height: 100%;
+}
+
+.buttons {
+    width: 17%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.button {
+    border-radius: 3px;
+    border-color: lightgreen;
+    border-style: solid;
+}
