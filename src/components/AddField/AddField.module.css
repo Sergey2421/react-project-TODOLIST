@@ -1,0 +1,21 @@
+.container {
+    width: 65%;
+    height: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input {
+    width: 75%;
+    height: 100%;
+}
+
+.button {
+    width: 15%;
+    height: 100%;
+    box-sizing: content-box;
+    border-radius: 3px;
+    border-color: lightgreen;
+    border-style: solid;
+}
