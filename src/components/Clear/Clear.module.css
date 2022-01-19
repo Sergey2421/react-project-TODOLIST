@@ -1,0 +1,12 @@
+.container {
+    margin-top: 15px;
+    height: 25px;
+}
+
+.button {
+    height: 100%;
+    box-sizing: content-box;
+    border-radius: 3px;
+    border-color: lightgreen;
+    border-style: solid;
+}

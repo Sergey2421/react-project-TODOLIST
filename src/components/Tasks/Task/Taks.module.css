@@ -23,7 +23,13 @@
 }
 
 .button {
+    height: 25px;
+    box-sizing: content-box;
     border-radius: 3px;
     border-color: lightgreen;
     border-style: solid;
+}
+
+.button img {
+    margin: 0;
 }
