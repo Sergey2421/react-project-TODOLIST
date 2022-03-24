@@ -5,3 +5,20 @@
     flex-direction: column;
     justify-content: center;
 }
+
+.block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.block p {
+    margin: 0;
+}
+
+.line {
+    margin-top: 25px;
+    color: black;
+    width: 100%;
+}

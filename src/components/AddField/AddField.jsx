@@ -1,21 +1,27 @@
 import React from 'react';
 import Css from './AddField.module.css'
-import Task from "../Tasks/Task/Task";
+import {addItemAction, addTextInputAction} from "../../state/state";
 
-function addField() {
-    this.context.push(<Task text={}/>)
-}
+const AddField = (props) => {
 
-class AddField extends React.Component {
-    static contextType = Context;
-    render() {
-        return (
-            <div className={Css.container}>
-                <input className={Css.input} type={'text'}/>
-                <button className={Css.button} onClick={addField}>Add Item</button>
-            </div>
-        )
+    let textInput = React.createRef();
+
+    function onFieldChange() {
+        let action = addTextInputAction(textInput.current.value);
+        props.state.dispatch(action);
     }
+
+    function click() {
+        let action = addItemAction(textInput.current.value);
+        props.state.dispatch(action);
+    }
+
+    return (
+        <div className={Css.container}>
+            <input ref={textInput} className={Css.input} type={'text'} value={props.state.textField} onChange={onFieldChange}/>
+            <button className={Css.button} onClick={click}>Add Item</button>
+        </div>
+    )
 }
 
 export default AddField;
