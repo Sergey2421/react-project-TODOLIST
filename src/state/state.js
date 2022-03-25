@@ -1,11 +1,6 @@
-const ADD_ITEM = 'ADD_ITEM';
-const ADD_TEXT = 'ADD_TEXT';
-const CLEAR = 'CLEAR';
-const EDIT_TEXT = 'EDIT_TEXT';
-const CONFIRM = 'CONFIRM';
-const DELETE = 'DELETE';
-const DISABLE = 'DISABLE';
-const DELETE_COMPLETED = 'DELETE_COMPLETED';
+import {add_reducer} from "./add_reducer";
+import {task_reducer} from "./task_reducer";
+import {clear_reducer} from "./clear_reducer";
 
 let state = {
     taskElements: [],
@@ -18,107 +13,11 @@ let state = {
         this._callSubscriber = observer;
     },
     dispatch(action) {
-        switch (action.type) {
-            case ADD_ITEM: {
-                this.taskElements.push(action.text);
-                this.disabled.push(true);
-                this.textField = '';
-                this._callSubscriber(state);
-                break;
-            }
-            case ADD_TEXT: {
-                this.textField = action.text;
-                this._callSubscriber(state);
-                break;
-            }
-            case CLEAR: {
-                this.taskElements = [];
-                this.completedTasks = [];
-                this._callSubscriber(state);
-                break;
-            }
-            case EDIT_TEXT: {
-                this.taskElements[action.index] = action.text;
-                this._callSubscriber(state);
-                break;
-            }
-            case CONFIRM: {
-                this.completedTasks.push(this.taskElements.splice(action.index, 1));
-                this.disabled.splice(action.index, 1);
-                this._callSubscriber(state);
-                break;
-            }
-            case DELETE: {
-                this.taskElements.splice(action.index, 1);
-                this.disabled.splice(action.index, 1);
-                this._callSubscriber(state);
-                break;
-            }
-            case DISABLE: {
-                this.disabled[action.index] = !this.disabled[action.index];
-                this._callSubscriber(state);
-                break;
-            }
-            case DELETE_COMPLETED: {
-                this.completedTasks.splice(action.index, 1);
-                this._callSubscriber(state);
-                break;
-            }
-            default: break;
-        }
-    }
-}
-
-export const addItemAction = (text) => {
-    return {
-        type: ADD_ITEM,
-        text: text,
-    }
-}
-
-export const addTextInputAction = (text) => {
-    return {
-        type: ADD_TEXT,
-        text: text,
-    }
-}
-
-export const clearAction = () => ({type: CLEAR});
-
-export const editAction = (text, id) => {
-    return {
-        type: EDIT_TEXT,
-        text: text,
-        index: id,
-    }
-}
-
-export const confirmAction = (id) => {
-    return {
-        type: CONFIRM,
-        index: id,
-    }
-}
-
-export const disableAction = (id) => {
-    return {
-        type: DISABLE,
-        index: id,
-    }
-}
-
-export const deleteAction = (id) => {
-    return {
-        type: DELETE,
-        index: id,
-    }
-}
-
-export const deleteCompletedAction = (id) => {
-    return {
-        type: DELETE_COMPLETED,
-        index: id,
-    }
+        state = add_reducer(state, action);
+        state = task_reducer(state, action);
+        state = clear_reducer(state, action);
+        this._callSubscriber(state);
+    },
 }
 
 export default state;

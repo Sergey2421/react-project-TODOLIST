@@ -1,6 +1,6 @@
 import React from 'react';
 import Css from './CompletedTask.module.css'
-import {deleteCompletedAction} from "../../../state/state";
+import {deleteCompletedAction} from "../../../state/task_reducer";
 
 
 const CompletedTask = (props) => {

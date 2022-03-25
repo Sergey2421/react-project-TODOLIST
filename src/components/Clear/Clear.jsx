@@ -1,6 +1,6 @@
 import React from 'react';
 import Css from './Clear.module.css'
-import {clearAction} from "../../state/state";
+import {clearAction} from "../../state/clear_reducer";
 
 const Clear = (props) => {
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import Css from './Taks.module.css'
-import {confirmAction, deleteAction, disableAction, editAction} from "../../../state/state";
+import {confirmAction, deleteAction, disableAction, editAction} from "../../../state/task_reducer";
 
 const Task = (props) => {
 

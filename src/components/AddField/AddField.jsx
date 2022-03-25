@@ -1,24 +1,22 @@
 import React from 'react';
 import Css from './AddField.module.css'
-import {addItemAction, addTextInputAction} from "../../state/state";
+import {addItemAction, addTextInputAction} from "../../state/add_reducer";
 
 const AddField = (props) => {
 
-    let textInput = React.createRef();
-
-    function onFieldChange() {
-        let action = addTextInputAction(textInput.current.value);
+    function onFieldChange(e) {
+        let action = addTextInputAction(e.target.value);
         props.state.dispatch(action);
     }
 
     function click() {
-        let action = addItemAction(textInput.current.value);
+        let action = addItemAction();
         props.state.dispatch(action);
     }
 
     return (
         <div className={Css.container}>
-            <input ref={textInput} className={Css.input} type={'text'} value={props.state.textField} onChange={onFieldChange}/>
+            <input className={Css.input} type={'text'} value={props.state.textField} onChange={onFieldChange}/>
             <button className={Css.button} onClick={click}>Add Item</button>
         </div>
     )
