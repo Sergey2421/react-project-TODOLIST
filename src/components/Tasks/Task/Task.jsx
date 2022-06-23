@@ -30,9 +30,9 @@ const Task = (props) => {
         <div className={Css.container}>
             <input disabled={props.state.disabled[props.id]} ref={taskText} className={Css.input} type={'text'} value={props.text} onChange={onTaskChange}/>
             <div className={Css.buttons}>
-                <button className={Css.button} onClick={confirm}><img className={Css.img} src={'https://free-png.ru/wp-content/uploads/2021/06/free-png.ru-39-450x450.png'}/></button>
+                <button className={Css.button} onClick={confirm}><img className={Css.img} src={'https://cdn.pixabay.com/photo/2016/02/02/05/52/confirm-1174801_960_720.png'}/></button>
                 <button className={Css.button} onClick={edit}><img className={Css.img} src={'https://cdn-icons-png.flaticon.com/512/45/45706.png'}/></button>
-                <button className={Css.button} onClick={deleteTask}><img className={Css.img} src={'https://free-png.ru/wp-content/uploads/2021/06/free-png.ru-38-450x450.png'}/></button>
+                <button className={Css.button} onClick={deleteTask}><img className={Css.img} src={'https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Crystal_button_cancel.svg/32px-Crystal_button_cancel.svg.png?20080403113445'}/></button>
             </div>
         </div>
     )
