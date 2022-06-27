@@ -1,7 +1,20 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
 .app {
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: var(--background-color-light);
+    color: var(--font-color-light);
+}
+
+.app.dark {
+    background-color: var(--background-color-dark);
+    color: var(--font-color-dark);
 }
 
 .container {

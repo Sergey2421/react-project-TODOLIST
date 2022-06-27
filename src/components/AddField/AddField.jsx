@@ -10,7 +10,7 @@ const AddField = (props) => {
     }
 
     function click() {
-        let action = addItemAction();
+        let action = addItemAction(props.setActive);
         props.state.dispatch(action);
     }
 
