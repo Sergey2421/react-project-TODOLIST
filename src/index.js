@@ -1,15 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import './theme.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import state from "./state/state";
+import {ThemeProvider} from "./context/ThemeContext";
 
 let rerender = (state) => {
     ReactDOM.render(
         <React.StrictMode>
-            <App state={state}/>
+            <ThemeProvider>
+                <App state={state}/>
+            </ThemeProvider>
         </React.StrictMode>,
         document.getElementById('root')
     );

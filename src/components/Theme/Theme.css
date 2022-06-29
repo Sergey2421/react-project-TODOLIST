@@ -1,0 +1,39 @@
+:root {
+    --background-color-dark: #202020;
+    --background-color-light: #c9c9c9;
+
+    --font-color-dark: #d0d0d0;
+    --font-color-light: #101010;
+
+    --display-dark: inline-block;
+    --display-light: none;
+
+    --background-color: var(--background-color-light);
+    --font-color: var(--font-color-light);
+}
+
+.theme {
+    top: 5vh;
+    left: 80vw;
+    position: absolute;
+}
+
+.theme_swap {
+    width: 3vw;
+    height: 3vh;
+    border-radius: 8px;
+    border-style: none;
+    font-weight: bold;
+}
+
+.light {
+    background-color: #c9c9c9;
+    color: #101010;
+    display: var(--display-light);
+}
+
+.dark {
+    background-color: #202020;
+    color: #d0d0d0;
+    display: var(--display-dark);
+}

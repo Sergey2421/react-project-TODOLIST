@@ -1,11 +1,15 @@
 import React from "react";
 import "./Theme.css"
+import {THEME_DARK, THEME_LIGHT, useTheme} from "../../context/ThemeContext";
 
-const Theme = ({theme, setTheme}) => {
+const Theme = () => {
+
+    const Theme = useTheme();
+
     return (
-        <div className={theme ? "light" : "dark"}>
-            <input type={"checkbox"} id={'dark'} value={'dark'} onClick={() => setTheme(!theme)}/>
-                <label for={'dark'}>Dark</label>
+        <div className={'theme'}>
+            <button className={'theme_swap dark'} onClick={() => {Theme.change(THEME_DARK)}}>Dark</button>
+            <button className={'theme_swap light'} onClick={() => {Theme.change(THEME_LIGHT)}}>Light</button>
         </div>
     )
 }

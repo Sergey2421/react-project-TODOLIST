@@ -11,7 +11,7 @@ function App(props) {
     const [modalActive, setModalActive] = useState(false);
     const [theme, setTheme] = useState(false);
     return (
-        <div className={theme ? "app dark" : "app light"}>
+        <div className={'app'}>
             <div className={'container'}>
                     <p>To Do List</p>
                     <AddField setActive={setModalActive} state={props.state}/>
